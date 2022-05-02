@@ -11,9 +11,7 @@
 double* my_solver(int N, double *A, double *B) {
 	printf("BLAS SOLVER\n");
 
-	/* C = B * A * A_t + B_t * B 
-	= (B * A) * A_t + (B_t * B)
-	*/
+	/* C = B * A * A_t + B_t * B = (B * A) * A_t + (B_t * B) */
 
 	/* D = B_t * B */
 	double *D = calloc(N * N, sizeof(double));

@@ -63,9 +63,7 @@ double *compute_transpose(int N, double *matrix, int operation_no) {
 
 double* my_solver(int N, double *A, double* B) {
 
-	/*
-	* C = B * A * A_t + B_t * B = (B * A) * A_t + (B_t * B)
-	*/
+	/* C = B * A * A_t + B_t * B = (B * A) * A_t + (B_t * B) */
 
 	/* (B * A) where A = upper triangular */
 	double *D = multiply_matrices(N, B, A, 1);

@@ -29,8 +29,8 @@ find C with 3 methods explained at the sections below.
 
 	For the optimized solution, it is almost the same code as above but with better modifications:
 	- introducing registers for variables so they won't be located on the stack and their accessing
-	will be done much faster
-	- using pointers to save lines and columns to better access the memory
+	will be done much faster improving cache misses.
+	- using pointers to save lines and columns to better access the memory.
 
 
 - tema2_blas
