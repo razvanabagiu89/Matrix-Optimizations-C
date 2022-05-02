@@ -1,4 +1,4 @@
-# Marketplace with Multiple Producers Multiple Consumers with Python   
+# Matrix Calculus Optimization in C using ATLAS and other techniques
 
 ## About
 
@@ -79,8 +79,26 @@ The blas method is by far the best here and we can see this in graph_all.png tha
 All graphs are done with linear representation in for N = 400, 480, 800, 880, 1200 and 1320 with OX axis
 representing N and OY axis representing the time on the cluster
 
-## Cache
+## Cache inspection
 
+First of all, looking at I cache reads we can clearly see that for neopt variant the number is significantly
+higher and that is due to cache unoptimization. In opt variant where we used registers to cache the result
+and pointers to forward store the values, we can see that the I cache reads is almost 50% lower than 
+previously.
+
+I   refs:      7,467,895,929 (neopt) vs 3,180,060,072 (opt)
+This shows the difference between the number of instructions executed.
+Also, on blas variant 290,532,026 we can see this goes a lot lower for its efficiency.
+
+Then, by looking at D cache reads and comparing first two variants the percentage is at 66% more efficient in the
+opt variant, meaning that memory reads are performing less times -> this is clear due to our performance tricks
+D   refs:      3,798,273,918 (neopt) vs 975,546,446 (opt)
+Again on blas: 107,627,173 very low compared to others  
+
+
+Predictive caches use a history of recent cache misses to predict future misses, and to reduce the overall cache miss rate.
+For this, looking at the branches on first two variants vs blas we have:
+Branches:        709,035,793 (neopt) vs 709,516,156 (opt) vs blas (4,345,874) is showing that blas is the master here.
 
 
 ## Graphs:
