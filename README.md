@@ -103,7 +103,7 @@ Branches:        709,035,793 (neopt) vs 709,516,156 (opt) vs blas (4,345,874) is
 
 ## Graphs:
 
-![p1](graph_all.png)
-![p2](graph_neopt.png)
-![p3](graph_opt_m.png)
-![p4](graph_blas.png)
+![p1](graph_all.PNG)
+![p2](graph_neopt.PNG)
+![p3](graph_opt_m.PNG)
+![p4](graph_blas.PNG)
